@@ -1,0 +1,33 @@
+<html lang="zh - CN">
+
+<head>
+    <meta charset="UTF - 8">
+    <meta name="viewport" content="width=device - width, initial - scale=1.0">
+    <title>JavaScript演示</title>
+</head>
+
+<body>
+    <script>
+        
+        alert('欢迎来到时间显示页面！');
+        
+        document.body.style.backgroundColor ='purple';
+
+        
+        const now = new Date();
+        const hours = now.getHours();
+        const minutes = now.getMinutes();
+        const seconds = now.getSeconds();
+
+        
+        const timeElement = document.createElement('p');
+        timeElement.textContent = `当前时间是：${hours}:${minutes}:${seconds}`;
+        timeElement.style.fontSize=50;
+        timeElement.style.color='white'
+
+        
+        document.body.appendChild(timeElement);
+    </script>
+</body>
+
+</html>
