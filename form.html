@@ -1,26 +1,84 @@
-<html>
-<body bgcolor=lightgreen>
-<form action=/cgi-bin/post-query method=POST>
-<h1>申请表</h1>
-姓名: <input type="text"><br><br>
-感兴趣的职位:<br>
-    <input type=radio name=Web>Web设计人员
-    <input type=radio name=Web>Web管理人员
-    <input type=radio name=Web>Web开发人员<br>
-其他要求：<br>
-<textarea name=request rows=5 cols=60 placeholder="包括薪水待遇、工作地点等。"></textarea><br>
-<input type=checkbox checked>发送确认消息<br>
-经验<select name=experience>
-        <option selected>无经验
-        <option>有经验
-    </select>
-<br><br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type=submit value="确定">&nbsp;<input type=reset>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申请表</title>
+    <style>
+        body {
+            background-color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #98fb98; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 8px 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="text-align: center;">申请表</h2>
+    <form action="#">
+        <label for="name">姓名:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="position">感兴趣的职位：</label><br>
+        <input type="radio" id="designer" name="position" value="Web设计人员">
+        <label for="designer">Web设计人员</label>
+        <input type="radio" id="manager" name="position" value="Web管理人员">
+        <label for="manager">Web管理人员</label>
+        <input type="radio" id="developer" name="position" value="Web开发人员">
+        <label for="developer">Web开发人员</label><br>
+
+        <label for="requirements">其他要求：</label>
+        <textarea id="requirements" name="requirements" placeholder="包括薪水待遇、工作地点等。"></textarea>
+
+        <input type="checkbox" id="confirm" name="confirm" checked>
+        <label for="confirm">发送确认消息</label><br>
+
+        <label for="experience">经验</label>
+        <select id="experience" name="experience">
+            <option value="无经验" selected>无经验</option>
+            <option value="有经验">有经验</option>
+        </select><br>
+
+        <input type="submit" value="确定">
+        <input type="reset" value="重置">
+    </form>
+</body>
+
 </html>
