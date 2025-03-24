@@ -1,32 +1,52 @@
-<html lang="zh - CN">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF - 8">
-    <meta name="viewport" content="width=device - width, initial - scale=1.0">
-    <title>JavaScript演示</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>实时时间显示</title>
+    <style>
+        body {
+            background-color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="time"></div>
+    <button onclick="showDialog()">显示提示</button>
+    <button onclick="changeBackgroundColor()">改变背景色</button>
+
     <script>
-        
-        alert('欢迎来到时间显示页面！');
-        
-        document.body.style.backgroundColor ='purple';
+        function updateTime() {
+            const now = new Date();
+            const month = now.getMonth() + 1;
+            const day = now.getDate();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            const timeString = `${month}月${day}日 ${hours}:${minutes}:${seconds}`;
+            document.getElementById('time').textContent = timeString;
+        }
 
-        
-        const now = new Date();
-        const hours = now.getHours();
-        const minutes = now.getMinutes();
-        const seconds = now.getSeconds();
+        setInterval(updateTime, 1000);
+        updateTime();
 
-        
-        const timeElement = document.createElement('p');
-        timeElement.textContent = `当前时间是：${hours}:${minutes}:${seconds}`;
-        timeElement.style.fontSize=50;
-        timeElement.style.color='white'
+        function showDialog() {
+            alert('这是时间显示界面');
+        }
 
-        
-        document.body.appendChild(timeElement);
+        function changeBackgroundColor() {
+            const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+            document.body.style.backgroundColor = randomColor;
+        }
     </script>
 </body>
 
